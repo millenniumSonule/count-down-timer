@@ -27,6 +27,7 @@ input[type="number"] {
 .timer-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
 
@@ -34,9 +35,17 @@ input[type="number"] {
   border: 3px solid #000; /* Adjust thickness and color as needed */
   padding: 8px; /* Optional: Adds padding for a better appearance */
   border-radius: 4px; /* Optional: Rounds the corners */
-  width: 186px;
-  height: 100px;
-  font-size: 100px;
+  width: 70px;
+  height: 50px;
+  font-size: 20px;
   margin:10px;
   text-align: center;
+}
+
+.start-button {
+  width: 80px;
+  height: 70px;
+  background-color:rgb(235, 235, 235);
+  font-weight: bolder;
+  font-size: 30px;
 }

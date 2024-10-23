@@ -7,6 +7,8 @@ const App = () => {
   const [minutes,setMinutes] = useState();
   const [seconds,setSeconds] = useState();
 
+  const [isTimerStarted, setIsTimerStarted] = useState(false);
+
   const handleHourInput = (e) =>{
     // setHour(e.target.value);
     const value = e.target.value;
@@ -44,6 +46,22 @@ const App = () => {
       alert('Seconds should be less than 60');
     }
 
+
+
+  }
+
+  const handleStartButton = () => {
+      const hourINSeconds = hour*60*60;
+      const minIndSeconds = minutes*60; 
+
+      const totalTime = hourINSeconds+minIndSeconds+seconds;
+
+      const timer = setTimeout( () => {
+          console.log('hours' + (totalTime/60/60));
+          console.log('mins' + (totalTime/60))
+          console.log('seconds' + (totalTime))
+      },totalTime*1000)
+    
   }
 
   return (
@@ -77,6 +95,11 @@ const App = () => {
                 className='sec-box'
             />
 
+            <button className='start-button' onClick={handleStartButton}>
+              
+              Start
+            </button>
+            
 
       </div>
     </div>
