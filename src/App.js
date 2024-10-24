@@ -51,16 +51,22 @@ const App = () => {
   }
 
   const handleStartButton = () => {
-      const hourINSeconds = hour*60*60;
-      const minIndSeconds = minutes*60; 
-
-      const totalTime = hourINSeconds+minIndSeconds+seconds;
-
-      const timer = setTimeout( () => {
-          console.log('hours' + (totalTime/60/60));
-          console.log('mins' + (totalTime/60))
+      const hourINSeconds =  Number(hour) * 60 * 60 || 0;
+      const minIndSeconds =  Number(minutes) * 60 || 0;
+      const totalTime = hourINSeconds + minIndSeconds + (Number(seconds) || 0);
+    
+      setIsTimerStarted(true);
+      
+      if(isTimerStarted){
+       
+        setInterval(()=>{
+          
+          alert(totalTime)
+          console.log('hours: ' + (totalTime / 3600));
+          console.log('hours: ' + (totalTime / 3600));
           console.log('seconds' + (totalTime))
-      },totalTime*1000)
+        },totalTime)
+      }
     
   }
 
