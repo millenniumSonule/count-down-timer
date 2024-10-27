@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './App.css'
 
 const App = () => {
@@ -49,11 +49,12 @@ const App = () => {
 
 
   }
-  let intervalId;
+  let intervalRef = useRef(null);
   const pauseButton = () => {
-    setIsTimerStarted(false);
-    if(!isTimerStarted) {
-      clearInterval(intervalId);
+    
+    if(isTimerStarted) {
+      clearInterval(intervalRef.current);
+      setIsTimerStarted(false);
     }
   }
 
@@ -71,7 +72,7 @@ const App = () => {
     let remainingTime = totalTime;
 
     
-     intervalId = setInterval(() => {
+    intervalRef.current = setInterval(() => {
      
 
       
@@ -103,7 +104,7 @@ const App = () => {
         setHour(hours_to_display);
         console.log(remainingTime);
       } else {
-        clearInterval(intervalId);
+        clearInterval(intervalRef.current);
         setIsTimerStarted(false);
       }
     }, 1000);
