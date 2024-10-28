@@ -43,7 +43,7 @@ input[type="number"] {
 }
 
 .start-button {
-  width: 80px;
+  width: 100px;
   height: 70px;
   background-color:rgb(235, 235, 235);
   font-weight: bolder;
