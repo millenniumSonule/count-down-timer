@@ -12,7 +12,7 @@ const App = () => {
   const handleHourInput = (e) => {
     // setHour(e.target.value);
     const value = e.target.value;
-
+ 
     if (value === '' || (Number(value) < 100)) {
       setHour(value);
     } else {
